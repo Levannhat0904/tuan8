@@ -1,20 +1,25 @@
-import React, { useState } from "react";
-import "./App.css";
-import Content from "./content";
-import ShoppingCart from "./shoppingcart/Shoppingcart";
-import ParentComponent from "./Test";
+import React, { useRef, useState } from "react";
 
-function App() {
-  // console.log("re-render");
+const ExampleComponent = () => {
+  const countRef = useRef(0); // useRef để lưu trữ giá trị
+  const [count, setCount] = useState(0); // useState để render lại component khi giá trị thay đổi
+
+  const increase = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const saveClick = () => {
+    countRef.current = count; // Lưu giá trị của count vào ref
+    console.log("Saved count:", countRef.current); // Hiển thị giá trị đã lưu trong console
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <h1>Shopping cart</h1>
-        <ShoppingCart /> */}
-        <ParentComponent />
-      </header>
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={increase}>Increase Count</button>
+      <button onClick={saveClick}>Save Click</button>
     </div>
   );
-}
+};
 
-export default App;
+export default ExampleComponent;
