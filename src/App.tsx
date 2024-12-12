@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Pages from "./pages";
+import Input from "./Profiler";
 
 const ExampleComponent = () => {
   const countRef = useRef(0); // useRef để lưu trữ giá trị
@@ -16,8 +17,8 @@ const ExampleComponent = () => {
 
   return (
     <div>
-      <h2>lazy- suspend</h2>
-      <Pages />
+      <h2>Profiler</h2>
+      <Input />
     </div>
   );
 };
