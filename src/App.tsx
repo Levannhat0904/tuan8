@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import Pages from "./pages";
 
 const ExampleComponent = () => {
   const countRef = useRef(0); // useRef để lưu trữ giá trị
@@ -15,9 +16,8 @@ const ExampleComponent = () => {
 
   return (
     <div>
-      <h2>Counter: {count}</h2>
-      <button onClick={increase}>Increase Count</button>
-      <button onClick={saveClick}>Save Click</button>
+      <h2>lazy- suspend</h2>
+      <Pages />
     </div>
   );
 };
